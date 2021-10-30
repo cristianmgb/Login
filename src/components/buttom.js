@@ -21,8 +21,9 @@ Buttom.defaultProps = {
   action: () => {},
 };
 
-Buttom.PropTypes = {
+Buttom.propTypes = {
   description: PropTypes.string,
+  action: PropTypes.func,
 };
 
 const styles = StyleSheet.create({

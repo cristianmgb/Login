@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import Buttom from './buttom';
 
-const Login = () => {
+const Login = props => {
   return (
     <SafeAreaView>
       <View style={styles.container}>
@@ -41,9 +41,16 @@ const Login = () => {
           <View style={styles.circle} />
         </View>
         <View style={styles.containerInput}>
-          <TextInput placeholder="Ingresa tu usuario" style={styles.input} />
+          <TextInput
+            placeholder="Ingresa tu usuario"
+            style={styles.input}
+            value={props.usuario}
+            onChangeText={text => {
+              props.changeText(text);
+            }}
+          />
         </View>
-        <Buttom description={102} />
+        <Buttom description={'Iniciar sesión'} action={props.login} />
       </View>
     </SafeAreaView>
   );
